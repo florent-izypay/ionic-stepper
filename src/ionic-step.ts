@@ -12,7 +12,6 @@ export class IonicStepComponent {
   index: number;
 
   @Input() disabled: boolean;
-  @Input() validationCallback = () => true;
   @Input() label: string;
   @Input() description: string;
   @Input() icon = 'number';
@@ -21,8 +20,4 @@ export class IonicStepComponent {
   @Input() status: IonicStepStatus = '';
 
   @ViewChild(TemplateRef) content: TemplateRef<any>;
-  validate() {
-    return this.validationCallback();
-  }
-
 }
