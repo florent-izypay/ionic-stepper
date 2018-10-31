@@ -15,11 +15,11 @@
     "prebuild": "npm run clean && npm run copy-src && npm run lint",
     "build": "npm run build:ts",
     "postbuild": "npm run copy-scss",
-    "prepare": "npm run build"
+    "prepare": "npm run build:ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HsuanXyz/ionic-stepper.git"
+    "url": "git+https://github.com/izypay/ionic-stepper.git"
   },
   "dependencies": {},
   "devDependencies": {
