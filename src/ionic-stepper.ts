@@ -50,6 +50,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
         <ion-step-header [index]="i"
                            [icon]="step.icon"
                            [errorIcon]="step.errorIcon"
+                           [successIcon]="step.successIcon"
                            [label]="step.label"
                            [status]="step.status"
                            [active]="i <= selectedIndex"
@@ -103,6 +104,10 @@ export class IonicStepperComponent implements OnInit {
   }
 
   nextStep(): void {
+    const currentStep: IonicStepComponent = this._steps.find((_step: IonicStepComponent, index: number) => this.selectedIndex === index);
+    if (!currentStep.validate()) {
+      return;
+    }
     this.selectedIndex = Math.min(this.selectedIndex + 1, this._steps.length - 1);
     this._changeDetectorRef.markForCheck();
   }
@@ -113,6 +118,10 @@ export class IonicStepperComponent implements OnInit {
   }
 
   setStep(index: number): boolean {
+    const currentStep: IonicStepComponent = this._steps.find((_step: IonicStepComponent, index: number) => this.selectedIndex === index);
+    if (!currentStep.validate()) {
+      return;
+    }
     const len = this._steps.length;
     if (index < len - 1 && index >= 0) {
       this.selectedIndex = index;
