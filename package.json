@@ -15,7 +15,7 @@
     "prebuild": "npm run clean && npm run copy-src && npm run lint",
     "build": "npm run build:ts",
     "postbuild": "npm run copy-scss",
-    "prepare": "npm run build"
+    "prepare": "npm run build:ts && npm run copy-scss"
   },
   "repository": {
     "type": "git",
