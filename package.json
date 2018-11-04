@@ -10,12 +10,12 @@
     "clean": "rm -rf ./src ./dist",
     "lint": "tslint ./src/**/*.ts",
     "copy-src": "cpx './dev/src/ionic-stepper/**/*' './src'",
-    "copy-scss": "cpx './src/**/*.scss' './dist'",
+    "copy-scss": "./node_modules/.bin/cpx './src/**/*.scss' './dist'",
     "build:ts": "tsc && ngc",
     "prebuild": "npm run clean && npm run copy-src && npm run lint",
     "build": "npm run build:ts",
     "postbuild": "npm run copy-scss",
-    "prepare": "npm run copy-scss && npm run build:ts"
+    "prepare": "npm run build:ts && npm run copy-scss"
   },
   "repository": {
     "type": "git",
