@@ -2,7 +2,6 @@
 demo/
 .idea/
 node_modules/
-src/
 dev/
 tsconfig.json
 tslint.json

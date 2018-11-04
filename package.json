@@ -10,7 +10,7 @@
     "clean": "rm -rf ./src ./dist",
     "lint": "tslint ./src/**/*.ts",
     "copy-src": "cpx './dev/src/ionic-stepper/**/*' './src'",
-    "copy-scss": "./node_modules/.bin/cpx './src/**/*.scss' './dist'",
+    "copy-scss": "cpx './src/**/*.scss' './dist'",
     "build:ts": "tsc && ngc",
     "prebuild": "npm run clean && npm run copy-src && npm run lint",
     "build": "npm run build:ts",
@@ -48,10 +48,13 @@
     "steppers",
     "step"
   ],
-  "author": "HsuanLee",
+  "authors": [
+    "HsuanLee",
+    "Florent Limandas <florent@izypay.fr>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HsuanXyz/ionic-stepper/issues"
+    "url": "https://github.com/izypay/ionic-stepper/issues"
   },
-  "homepage": "https://github.com/HsuanXyz/ionic-stepper#readme"
+  "homepage": "https://github.com/izypay/ionic-stepper#readme"
 }
